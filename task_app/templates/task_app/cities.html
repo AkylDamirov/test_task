@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for i in cities %}
+    <div>
+        <h3>
+            City: {{i}} |
+            <a href="{% url 'delete' i.id %}" class="btn btn-danger">Delete</a> |
+            <a href="{% url 'about' i.id %}" class="btn btn-outline-success">Learn more</a>
+        </h3>
+        <hr>
+    </div>
+{% endfor %}
+<a href="{% url 'main' %}">return main page</a>
+</body>
+</html>

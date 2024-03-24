@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add city</title>
+    <style>
+    .big-input {
+        width: 300px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+<h3>Add City</h3>
+<form method="post" action="{% url 'add' %}">
+    {% csrf_token %}
+
+    <label for="{{ form.city.id_for_label }}"><b>City Name:</b></label>
+    {{ form.city }}
+
+        <br>
+        {% if form.errors %}
+            <ul>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <li>{{ field.label }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+            </ul>
+    {% endif %}
+    <button type="submit">Submit</button>
+</form>
+<br>
+<a href="{% url 'main' %}">return main page</a>
+</body>
+</html>
