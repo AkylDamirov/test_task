@@ -8,6 +8,6 @@ urlpatterns = [
     path('get_cities', views.get_cities, name='get_cities'),
     path('delete/<int:id>', views.delete, name='delete'),
     path('about/<int:pk>', views.About.as_view(), name='about'),
-    path('nearest', views.nearest, name='nearest'),
+    path('nearest', views.nearest_cities_view, name='nearest_cities'),
     path('nearest2', views.nearest, name='nearest2'),
 ]

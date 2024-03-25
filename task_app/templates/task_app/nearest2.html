@@ -5,11 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Nearest Cities</h1>
-    <ul>
-    {% for city in nearest_cities %}
-        <li>{{ city.name }}</li>
+<h2>Nearest Cities</h2>
+<ul>
+    {% for city, distance in nearest_cities %}
+        <li>{{ city }} - {{ distance }} km away</li>
     {% endfor %}
-    </ul>
+</ul>
+<a href="{% url 'main' %}">return main page</a>
 </body>
 </html>
