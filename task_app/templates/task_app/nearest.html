@@ -5,11 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h3>City: {{city.city}}</h3>
-<h3>latitude: {{city.latitude}}</h3>
-
-<h3>longitude: {{city.longitude}}</h3>
-<br>
+<h1>Enter Coordinates</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
 <br>
 <a href="{% url 'main' %}">return main page</a>
 </body>

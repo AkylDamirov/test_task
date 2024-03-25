@@ -5,3 +5,8 @@ class CitiesForm(forms.ModelForm):
     class Meta:
         model = Cities
         fields = ('city',)
+
+class NearestForm(forms.ModelForm):
+    class Meta:
+        model = Cities
+        fields = ('latitude', 'longitude')

@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import CreateView, DetailView
 from .models import Cities
-from .forms import CitiesForm
+from .forms import CitiesForm, NearestForm
+
 
 # Create your views here.
 
@@ -34,6 +35,15 @@ class About(DetailView):
     model = Cities
     template_name = 'task_app/about.html'
     context_object_name = 'city'
+
+def nearest(request):
+    form = NearestForm
+    return render(request, 'task_app/nearest.html', {'form':form})
+
+
+
+
+
 
 
 
